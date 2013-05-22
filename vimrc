@@ -31,6 +31,7 @@ Bundle 'hallison/vim-markdown.git'
 Bundle 'Rip-Rip/clang_complete'
 Bundle 'cfddream/vim-mou'
 Bundle 'duff/vim-bufonly'
+Bundle 'vim-scripts/sudo.vim.git'
 
 filetype plugin indent on " enable loading indent file for filetype
 
@@ -179,7 +180,7 @@ let g:miniBufExplModSelTarget = 1
 " Pydoc Preview
 set completeopt=menuone,longest,preview
 
-" R configuration
+" R-plugin configuration
 autocmd FileType r set fdm=indent
 au BufNewFile,BufRead *.R set ft=r
 let g:vimrplugin_underscore=0
