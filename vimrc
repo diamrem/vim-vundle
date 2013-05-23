@@ -1,6 +1,5 @@
 set nocompatible               " be iMproved
 filetype off                   " required!
-
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
@@ -20,7 +19,7 @@ Bundle 'mitechie/pyflakes-pathogen.git'
 Bundle 'vim-scripts/Vim-R-plugin.git'
 Bundle 'vim-scripts/Screen-vim---gnu-screentmux.git'
 Bundle 'msanders/snipmate.vim.git'
-Bundle 'ervandew/supertab.git'
+" Bundle 'ervandew/supertab.git'
 Bundle 'Shougo/neocomplcache.git'
 Bundle 'Shougo/neosnippet.git'
 Bundle 'vim-scripts/taglist.vim.git'
@@ -192,6 +191,8 @@ autocmd FileType r imap <c-_> <space><-<space>
 
 " taglist configuration
 let Tlist_Ctags_Cmd = '/usr/local/bin/ctags'
+" map <C-/> :tab split<CR>:exec("tag ".expand("<cword>"))<CR>
+" map <C-\> :vsp <CR>:exec("tag ".expand("<cword>"))<CR>
 
 " ------ Latex-Suite -------
 " IMPORTANT: use helptags ~/.vim/bundle/latexsuite/doc/ to intial setup
@@ -220,13 +221,15 @@ set completeopt=menu,menuone,longest
 " set pumheight=15
  
 " SuperTab option for context aware completion
-let g:SuperTabDefaultCompletionType = "context"
+" let g:SuperTabDefaultCompletionType = "context"
  
 " Disable auto popup, use <Tab> to autocomplete
 let g:clang_complete_auto = 0
+
 " Show clang errors in the quickfix window
 let g:clang_complete_copen = 1
 
+let g:clang_library_path = '/opt/llvm/lib'
 
 " Disable AutoComplPop. Comment out this line if AutoComplPop is not installed.
 let g:acp_enableAtStartup = 0
@@ -261,7 +264,7 @@ inoremap <expr><C-g>     neocomplcache#undo_completion()
 inoremap <expr><C-l>     neocomplcache#complete_common_string()
 
 " SuperTab like snippets behavior.
-"imap <expr><TAB> neocomplcache#sources#snippets_complete#expandable() ? "\<Plug>(neocomplcache_snippets_expand)" : pumvisible() ? "\<C-n>" : "\<TAB>"
+imap <expr><TAB> neocomplcache#sources#snippets_complete#expandable() ? "\<Plug>(neocomplcache_snippets_expand)" : pumvisible() ? "\<C-n>" : "\<TAB>"
 
 " Recommended key-mappings.
 " <CR>: close popup and save indent.
