@@ -18,8 +18,8 @@ Bundle 'fs111/pydoc.vim.git'
 Bundle 'mitechie/pyflakes-pathogen.git'
 Bundle 'vim-scripts/Vim-R-plugin.git'
 Bundle 'vim-scripts/Screen-vim---gnu-screentmux.git'
-Bundle 'msanders/snipmate.vim.git'
-" Bundle 'ervandew/supertab.git'
+" Bundle 'msanders/snipmate.vim.git'
+Bundle 'ervandew/supertab.git'
 Bundle 'Shougo/neocomplcache.git'
 Bundle 'Shougo/neosnippet.git'
 Bundle 'vim-scripts/taglist.vim.git'
@@ -31,13 +31,14 @@ Bundle 'Rip-Rip/clang_complete'
 Bundle 'cfddream/vim-mou'
 Bundle 'duff/vim-bufonly'
 Bundle 'vim-scripts/sudo.vim.git'
+Bundle 'vim-scripts/Conque-Shell.git'
 
 filetype plugin indent on " enable loading indent file for filetype
 
 " -----Key Mapping-----
 
 " remap leader key
-let mapleader = ","
+" let mapleader = ","
 
 " Control Window Movement
 map <c-m> <c-w>j
@@ -49,10 +50,6 @@ map <c-h> <c-w>h
 " Plugin key-mappings.
 imap <C-k>     <Plug>(neosnippet_expand_or_jump)
 smap <C-k>     <Plug>(neosnippet_expand_or_jump)
-
-" SuperTab like snippets behavior.
-imap <expr><TAB> neosnippet#expandable_or_jumpable() ? "\<Plug>(neosnippet_expand_or_jump)" : pumvisible() ? "\<C-n>" : "\<TAB>"
-smap <expr><TAB> neosnippet#expandable_or_jumpable() ? "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
 
 " For snippet_complete marker.
 if has('conceal')
@@ -220,16 +217,13 @@ set completeopt=menu,menuone,longest
 " Limit popup menu height
 " set pumheight=15
  
-" SuperTab option for context aware completion
-" let g:SuperTabDefaultCompletionType = "context"
- 
 " Disable auto popup, use <Tab> to autocomplete
 let g:clang_complete_auto = 0
 
 " Show clang errors in the quickfix window
 let g:clang_complete_copen = 1
 
-let g:clang_library_path = '/opt/llvm/lib'
+" let g:clang_library_path = '/opt/llvm/lib'
 
 " Disable AutoComplPop. Comment out this line if AutoComplPop is not installed.
 let g:acp_enableAtStartup = 0
