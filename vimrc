@@ -19,7 +19,7 @@ Bundle 'mitechie/pyflakes-pathogen.git'
 Bundle 'vim-scripts/Vim-R-plugin.git'
 Bundle 'vim-scripts/Screen-vim---gnu-screentmux.git'
 " Bundle 'msanders/snipmate.vim.git'
-Bundle 'ervandew/supertab.git'
+" Bundle 'ervandew/supertab.git'
 Bundle 'Shougo/neocomplcache.git'
 Bundle 'Shougo/neosnippet.git'
 Bundle 'vim-scripts/taglist.vim.git'
@@ -31,7 +31,7 @@ Bundle 'Rip-Rip/clang_complete'
 Bundle 'cfddream/vim-mou'
 Bundle 'duff/vim-bufonly'
 Bundle 'vim-scripts/sudo.vim.git'
-Bundle 'vim-scripts/Conque-Shell.git'
+" Bundle 'Conque-Shell'
 
 filetype plugin indent on " enable loading indent file for filetype
 
