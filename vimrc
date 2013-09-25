@@ -164,9 +164,8 @@ endif
 " Pyflakes
 let g:pyflakes_use_quickfix = 0
 
-" Supertab
-au FileType python set omnifunc=pythoncomplete#Complete
-let g:SuperTabDefaultCompletionType = "context"
+" YCM config
+let g:ycm_global_ycm_extra_conf = '~/.ycm_extra_conf.py'
 
 " MiniBufExplorer
 let g:miniBufExplMapWindowNavVim = 1
