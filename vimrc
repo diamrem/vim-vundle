@@ -10,29 +10,23 @@ Bundle 'mileszs/ack.vim.git'
 Bundle 'wincent/Command-T.git'
 Bundle 'HenningM/cvim-pathogen.git'
 Bundle 'sjl/gundo.vim.git'
-Bundle 'vim-scripts/LaTeX-Suite-aka-Vim-LaTeX.git'
 Bundle 'sontek/minibufexpl.vim.git'
 Bundle 'vim-scripts/The-NERD-tree.git'
-Bundle 'vim-scripts/pep8.git'
-Bundle 'fs111/pydoc.vim.git'
 Bundle 'mitechie/pyflakes-pathogen.git'
 Bundle 'vim-scripts/Vim-R-plugin.git'
 Bundle 'vim-scripts/Screen-vim---gnu-screentmux.git'
-" Bundle 'msanders/snipmate.vim.git'
-" Bundle 'ervandew/supertab.git'
-" Bundle 'Shougo/neocomplcache.git'
-" Bundle 'Rip-Rip/clang_complete'
 Bundle 'Valloric/YouCompleteMe.git'
-Bundle 'Shougo/neosnippet.git'
 Bundle 'vim-scripts/taglist.vim.git'
 Bundle 'vim-scripts/TaskList.vim.git'
 Bundle 'groenewege/vim-less.git'
-Bundle 'mattn/zencoding-vim.git'
 Bundle 'hallison/vim-markdown.git'
-Bundle 'cfddream/vim-mou'
 Bundle 'duff/vim-bufonly'
 Bundle 'vim-scripts/sudo.vim.git'
+" Bundle 'vim-scripts/LaTeX-Suite-aka-Vim-LaTeX.git'
 " Bundle 'Conque-Shell'
+" Bundle 'vim-scripts/Emmet.vim.git'
+" Bundle 'vim-scripts/pep8.git'
+" Bundle 'fs111/pydoc.vim.git'
 
 filetype plugin indent on " enable loading indent file for filetype
 
@@ -46,16 +40,6 @@ map <c-m> <c-w>j
 map <c-k> <c-w>k
 map <c-l> <c-w>l
 map <c-h> <c-w>h
-
-" Neosnippet
-" Plugin key-mappings.
-imap <C-k>     <Plug>(neosnippet_expand_or_jump)
-smap <C-k>     <Plug>(neosnippet_expand_or_jump)
-
-" For snippet_complete marker.
-if has('conceal')
-  set conceallevel=2 concealcursor=i
-endif
 
 " TaskList
 map <leader>sk <Plug>TaskList
@@ -166,6 +150,7 @@ let g:pyflakes_use_quickfix = 0
 
 " YCM config
 let g:ycm_global_ycm_extra_conf = '~/.ycm_extra_conf.py'
+let g:ycm_collect_identifiers_from_tags_files = 1
 
 " MiniBufExplorer
 let g:miniBufExplMapWindowNavVim = 1
@@ -194,21 +179,21 @@ let Tlist_Ctags_Cmd = '/usr/local/bin/ctags'
 " ------ Latex-Suite -------
 " IMPORTANT: use helptags ~/.vim/bundle/latexsuite/doc/ to intial setup
 " REQUIRED. This makes vim invoke Latex-Suite when you open a tex file.
-filetype plugin on
+" filetype plugin on
 
 " IMPORTANT: win32 users will need to have 'shellslash' set so that latex
 " can be called correctly.
-set shellslash
+" set shellslash
 
 " IMPORTANT: grep will sometimes skip displaying the file name if you
 " search in a singe file. This will confuse Latex-Suite. Set your grep
 " program to always generate a file-name.
-set grepprg=grep\ -nH\ $*
+" set grepprg=grep\ -nH\ $*
 
 
 " OPTIONAL: Starting with Vim 7, the filetype of empty .tex files defaults to
 " 'plaintex' instead of 'tex', which results in vim-latex not being loaded.
 " The following changes the default filetype back to 'tex':
-let g:tex_flavor='latex'
+" let g:tex_flavor='latex'
 
 " -----End Plugin Config-----
