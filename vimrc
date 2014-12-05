@@ -16,12 +16,14 @@ Bundle 'mitechie/pyflakes-pathogen.git'
 Bundle 'vim-scripts/Vim-R-plugin.git'
 Bundle 'vim-scripts/Screen-vim---gnu-screentmux.git'
 Bundle 'Valloric/YouCompleteMe.git'
-Bundle 'vim-scripts/taglist.vim.git'
 Bundle 'vim-scripts/TaskList.vim.git'
 Bundle 'groenewege/vim-less.git'
 Bundle 'hallison/vim-markdown.git'
 Bundle 'duff/vim-bufonly'
 Bundle 'vim-scripts/sudo.vim.git'
+Plugin 'fatih/vim-go'
+Plugin 'majutsushi/tagbar'
+" Bundle 'vim-scripts/taglist.vim.git'
 " Bundle 'vim-scripts/LaTeX-Suite-aka-Vim-LaTeX.git'
 " Bundle 'Conque-Shell'
 " Bundle 'vim-scripts/Emmet.vim.git'
@@ -56,7 +58,7 @@ map <leader>nt :NERDTreeToggle<CR>
 let g:NERDTreeWinPos = "right"
 
 " Taglist
-nnoremap <silent> <F8> :TlistToggle<CR>
+nnoremap <silent> <F8> :TagbarToggle<CR>
 
 " PEP8
 " let g:pep8_map='<leader>8'
@@ -88,6 +90,8 @@ map <leader>v :sp ~/.vimrc<CR><C-W>_
 map <silent> <leader>V :source ~/.vimrc<CR>:filetype detect<CR>:exe ":echo 'vimrc reloaded'"<CR>
 " -----end Key Mapping-----
 
+" try to detect filetypes
+filetype on
 " ----- Moving Around/Editing -----
 set cursorline " have a line indicate the cursor location
 set ruler " show the cursor position all the time
@@ -107,6 +111,7 @@ set softtabstop=4 " <BS> over an autoindent deletes both spaces.
 set expandtab " Use spaces, not tabs, for autoindent/tab key.
 set shiftround " rounds indent to a multiple of shiftwidth
 autocmd FileType python setl tabstop=4 shiftwidth=4 sts=4 "indentation for python file
+autocmd FileType go setl tabstop=4 shiftwidth=4 sts=4 expandtab "indentation for go file
 autocmd FileType html setl ts=2 sw=2 sts=2 "indentation for html file
 autocmd FileType js setl ts=2 sw=2 sts=2 "indentation for js file
 autocmd FileType less setl ts=2 sw=2 sts=2 "indentation for less file
@@ -133,8 +138,6 @@ set statusline=%=[FORMAT=%{&ff}]\ [%Y]\ [ASCII=\%03.3b]\ [%04l,%04v][%p%%]\ [L%L
 set laststatus=2
 " syntax highlight
 syntax on
-" try to detect filetypes
-filetype on
 " Disable auto comment
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 " register clipboard
@@ -172,10 +175,12 @@ let vimrplugin_applescript = 0
 autocmd FileType r imap <c-_> <space><-<space>
 
 " taglist configuration
-let Tlist_Ctags_Cmd = '/usr/local/bin/ctags'
+" let Tlist_Ctags_Cmd = '/usr/local/bin/ctags'
 " map <C-/> :tab split<CR>:exec("tag ".expand("<cword>"))<CR>
 " map <C-\> :vsp <CR>:exec("tag ".expand("<cword>"))<CR>
 
+" tagbar
+let g:tagbar_left = 1
 " ------ Latex-Suite -------
 " IMPORTANT: use helptags ~/.vim/bundle/latexsuite/doc/ to intial setup
 " REQUIRED. This makes vim invoke Latex-Suite when you open a tex file.
