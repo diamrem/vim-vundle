@@ -8,9 +8,8 @@ call vundle#rc()
 Bundle 'gmarik/vundle'
 Bundle 'mileszs/ack.vim.git'
 Bundle 'wincent/Command-T.git'
-Bundle 'HenningM/cvim-pathogen.git'
 Bundle 'sjl/gundo.vim.git'
-Bundle 'sontek/minibufexpl.vim.git'
+Bundle 'fholgado/minibufexpl.vim'
 Bundle 'vim-scripts/The-NERD-tree.git'
 Bundle 'mitechie/pyflakes-pathogen.git'
 Bundle 'vim-scripts/Vim-R-plugin.git'
@@ -23,6 +22,8 @@ Bundle 'duff/vim-bufonly'
 Bundle 'vim-scripts/sudo.vim.git'
 Plugin 'fatih/vim-go'
 Plugin 'majutsushi/tagbar'
+Plugin 'altercation/vim-colors-solarized'
+" Bundle 'HenningM/cvim-pathogen.git'
 " Bundle 'vim-scripts/taglist.vim.git'
 " Bundle 'vim-scripts/LaTeX-Suite-aka-Vim-LaTeX.git'
 " Bundle 'Conque-Shell'
@@ -101,7 +102,7 @@ set scrolloff=3 " Keep 3 context lines above and below the cursor
 set backspace=2 " Allow backspacing over autoindent, EOL, and BOL
 set showmatch " Briefly jump to a paren once it's balanced
 "set nowrap " don't wrap text
-autocmd Filetype python set textwidth=80
+" autocmd Filetype python set textwidth=80
 set linebreak " don't wrap textin the middle of a word
 set autoindent " always set autoindenting on
 set smartindent " use smart indent if there is no indent file
@@ -152,7 +153,7 @@ endif
 let g:pyflakes_use_quickfix = 0
 
 " YCM config
-let g:ycm_global_ycm_extra_conf = '~/.ycm_extra_conf.py'
+let g:ycm_global_ycm_extra_conf = '/Users/kewu/.ycm_extra_conf.py'
 let g:ycm_collect_identifiers_from_tags_files = 1
 
 " MiniBufExplorer
