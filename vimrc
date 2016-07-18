@@ -39,7 +39,7 @@ filetype plugin indent on " enable loading indent file for filetype
 " let mapleader = ","
 
 " Control Window Movement
-map <c-m> <c-w>j
+map <c-j> <c-w>j
 map <c-k> <c-w>k
 map <c-l> <c-w>l
 map <c-h> <c-w>h
@@ -124,6 +124,7 @@ set foldlevel=99 " don't fold by default
 
 " -----Color Scheme-----
 set t_Co=256
+set background=light
 colorscheme solarized
 " -----end Color Scheme-----
 
@@ -174,6 +175,9 @@ let vimrplugin_tmux = 1
 let vimrplugin_r_path = "/usr/local/bin/"
 let vimrplugin_applescript = 0
 autocmd FileType r imap <c-_> <space><-<space>
+
+" Ruby
+let g:CommandTFileScanner="git"
 
 " taglist configuration
 " let Tlist_Ctags_Cmd = '/usr/local/bin/ctags'
