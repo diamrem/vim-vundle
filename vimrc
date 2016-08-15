@@ -116,6 +116,7 @@ autocmd FileType go setl tabstop=4 shiftwidth=4 sts=4 expandtab "indentation for
 autocmd FileType html setl ts=2 sw=2 sts=2 "indentation for html file
 autocmd FileType js setl ts=2 sw=2 sts=2 "indentation for js file
 autocmd FileType less setl ts=2 sw=2 sts=2 "indentation for less file
+autocmd FileType ruby setl ts=2 sw=2 sts=2 "indentation for ruby file
 set matchpairs+=<:> " show matching <> (html mainly) as well
 set foldmethod=indent " allow us to fold on indents
 set foldlevel=99 " don't fold by default
@@ -124,7 +125,7 @@ set foldlevel=99 " don't fold by default
 
 " -----Color Scheme-----
 set t_Co=256
-set background=light
+set background=dark
 colorscheme solarized
 " -----end Color Scheme-----
 
@@ -147,6 +148,12 @@ if $TMUX == ''
     set clipboard+=unnamed
 endif
 " set clipboard=unnamed
+
+" Change cursor shape between insert and normal mode in iTerm2.app
+if $TERM_PROGRAM =~ "iTerm"
+    let &t_SI = "\<Esc>]50;CursorShape=1\x7" " Vertical bar in insert mode
+    let &t_EI = "\<Esc>]50;CursorShape=0\x7" " Block in normal mode
+endif
 " -----End Misc-----
 
 " -----Plugin Config-----
