@@ -23,6 +23,7 @@ Bundle 'vim-scripts/sudo.vim.git'
 Plugin 'fatih/vim-go'
 Plugin 'majutsushi/tagbar'
 Plugin 'altercation/vim-colors-solarized'
+Bundle 'solarnz/thrift.vim'
 " Bundle 'HenningM/cvim-pathogen.git'
 " Bundle 'vim-scripts/taglist.vim.git'
 " Bundle 'vim-scripts/LaTeX-Suite-aka-Vim-LaTeX.git'
@@ -32,6 +33,7 @@ Plugin 'altercation/vim-colors-solarized'
 " Bundle 'fs111/pydoc.vim.git'
 
 filetype plugin indent on " enable loading indent file for filetype
+set fileformat=unix
 
 " -----Key Mapping-----
 
